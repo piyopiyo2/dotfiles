@@ -25,6 +25,10 @@ git \
 vim \
 tree
 
+# font
+sudo apt-get install fonts-inconsolata -y
+sudo fc-cache -fv
+
 # pyenv
 if [ ! -d ~/.pyenv ]; then
     git clone https://github.com/pyenv/pyenv.git ~/.pyenv

@@ -1,0 +1,10 @@
+set number
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set autoindent
+set nowrap
+set encoding=utf-8
+syntax on

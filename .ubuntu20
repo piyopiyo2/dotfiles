@@ -4,6 +4,13 @@ PYTHON_VERSION="3.9.2"
 
 sudo apt update sudo apt -y upgrade
 
+# basic
+sudo apt-get install -y \
+vim \
+tree \
+pwgen
+
+# for pyenv
 sudo apt-get install -y \
 build-essential \
 libssl-dev \
@@ -22,8 +29,12 @@ libffi-dev \
 liblzma-dev \
 python-openssl \
 git \
-vim \
-tree
+
+# for tensorflow
+sudo apt-get install -y \
+pkg-config \
+libhdf5-100 \
+libhdf5-dev
 
 # font
 sudo apt-get install fonts-inconsolata -y

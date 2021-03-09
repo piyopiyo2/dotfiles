@@ -88,3 +88,8 @@ mypy
 
 # Install torch==1.8.0 (WARNING: not stable version)
 pip install --pre torch torchvision torchaudio -f https://download.pytorch.org/whl/nightly/cu110/torch_nightly.html
+
+# Install LibreOffice
+sudo add-apt-repository ppa:libreoffice/ppa
+sudo apt update
+sudo apt install libreoffice

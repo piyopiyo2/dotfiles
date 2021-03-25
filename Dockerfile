@@ -10,11 +10,15 @@ RUN apt-get update && \
     git \
     tree
 
+
 # install python
 RUN apt-get update && \
     apt-get install software-properties-common -y --no-install-recommends && \
     add-apt-repository ppa:deadsnakes/ppa && \
-    apt-get install -y --no-install-recommends python3.8 python3-pip 
+    apt-get install -y --no-install-recommends \
+    python3.8 \
+    python3-pip \
+    libgl1-mesa-dev 
 RUN ln -s /usr/bin/pip3 /usr/bin/pip
 RUN ln -s /usr/bin/python3.8 /usr/bin/python
 RUN python -m pip install --upgrade pip
@@ -33,7 +37,7 @@ RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
 
 # vim
-RUN wget https://github.com/piyopiyo2/dotfiles/blob/master/.vimrc -O /.vimrc
+RUN wget https://github.com/piyopiyo2/dotfiles/blob/master/.vimrc -O /root/.vimrc
 
 # git
 RUN git config --global user.name "piyopiyo2"

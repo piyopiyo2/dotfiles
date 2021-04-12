@@ -10,7 +10,6 @@ RUN apt-get update && \
     git \
     tree
 
-
 # install python
 RUN apt-get update && \
     apt-get install software-properties-common -y --no-install-recommends && \
@@ -25,6 +24,7 @@ RUN python -m pip install --upgrade pip
 RUN pip install \
     numpy \
     opencv-python \
+    albumentations==0.5.2 \
     black \
     mypy \
     flake8 \
@@ -37,7 +37,7 @@ RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
 
 # vim
-RUN wget https://github.com/piyopiyo2/dotfiles/blob/master/.vimrc -O /root/.vimrc
+RUN wget https://raw.githubusercontent.com/piyopiyo2/dotfiles/master/.vimrc -O ~/.vimrc
 
 # git
 RUN git config --global user.name "piyopiyo2"

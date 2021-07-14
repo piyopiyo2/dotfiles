@@ -1,0 +1,13 @@
+numpy>=1.20.1
+opencv-python>=4.5.1
+albumentations==0.5.2
+tqdm==4.59.0
+pytest==6.2.2
+mypy==0.812
+flake8==3.8.4
+isort==5.7.0
+black==20.8b1
+
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torch==1.9.0+cu111
+torchvision==0.10.0+cu111

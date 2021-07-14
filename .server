@@ -1,0 +1,29 @@
+#!/bin/bash
+
+PYTHON_VERSION="3.9.6"
+
+# vim
+wget https://raw.githubusercontent.com/piyopiyo2/dotfiles/master/.vimrc -O ~/.vimrc
+
+# git
+git config --global user.name "piyopiyo2"
+git config --global user.email "79834290+piyopiyo2@users.noreply.github.com"
+git config --global core.editor "vim"
+git config --global core.filemode false
+
+# pyenv/python
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init --path)"' >> ~/.bashrc
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+pyenv install $PYTHON_VERSION
+pyenv global $PYTHON_VERSION
+if [[ `python -V` != "Python "$PYTHON_VERSION ]]; then
+    echo "Failed to install Python "$PYTHON_VERSION;
+    exit 1;
+fi
+pip install --upgrade pip
+pip install -r requirements.txt

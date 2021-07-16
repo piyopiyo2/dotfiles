@@ -18,7 +18,6 @@ RUN apt-get update && \
     python3.8 \
     python3-pip \
     libgl1-mesa-dev 
-RUN ln -s /usr/bin/pip3 /usr/bin/pip
 RUN ln -s /usr/bin/python3.8 /usr/bin/python
 RUN python -m pip install --upgrade pip
 RUN pip install \
